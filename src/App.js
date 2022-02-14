@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect, useRef } from "react";
+import ReactPageScroller from 'react-page-scroller';
+import Contact from "./components/Contact";
+import Intro from "./components/Intro";
+import Introduce from "./components/Introduce";
+import Project from "./components/Project";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ return(
+   <ReactPageScroller
+   animationTimer={700}
+   animationTimerBuffer={500}
+   pageOnChange={(e)=>{console.log(e)}}>
+     <Intro></Intro>
+     <Introduce></Introduce>
+     <Project></Project>
+     <Contact></Contact>
+   </ReactPageScroller>
+ )
 }
 
 export default App;
